@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">LikeToday</string>
+    <string name="home">home</string>
+    <string name="acitivity">activity</string>
+    <string name="goal">goal</string>
+    <string name="logs">logs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
