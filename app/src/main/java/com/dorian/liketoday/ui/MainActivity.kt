@@ -5,6 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.dorian.liketoday.R
 import com.dorian.liketoday.databinding.ActivityMainBinding
+import com.dorian.liketoday.ui.challenge.ChallengeFragment
+import com.dorian.liketoday.ui.exercise.ExerciseFragment
+import com.dorian.liketoday.ui.home.HomeFragment
+import com.dorian.liketoday.ui.mylogs.MyLogsFragment
 
 class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null
