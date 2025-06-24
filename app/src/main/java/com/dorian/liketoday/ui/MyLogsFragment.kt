@@ -1,4 +1,4 @@
-package com.dorian.liketoday
+package com.dorian.liketoday.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

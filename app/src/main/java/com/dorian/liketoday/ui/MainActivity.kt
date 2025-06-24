@@ -1,8 +1,9 @@
-package com.dorian.liketoday
+package com.dorian.liketoday.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.dorian.liketoday.R
 import com.dorian.liketoday.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

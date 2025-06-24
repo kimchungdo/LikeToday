@@ -1,21 +1,21 @@
-package com.dorian.liketoday
+package com.dorian.liketoday.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.dorian.liketoday.databinding.FragmentChallengeBinding
+import com.dorian.liketoday.databinding.FragmentHomeBinding
 
-class ChallengeFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private var binding: FragmentChallengeBinding? = null
+    private var binding: FragmentHomeBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentChallengeBinding.inflate(inflater, container, false)
+    ): View {
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding!!.root
     }
 
@@ -26,6 +26,6 @@ class ChallengeFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = ChallengeFragment()
+        fun newInstance() = HomeFragment()
     }
 }
