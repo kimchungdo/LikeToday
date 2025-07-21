@@ -56,4 +56,6 @@ dependencies {
     implementation libs.androidx.room.ktx
 
     implementation libs.kotlin.stdlib
+
+    implementation libs.mpandroidchart
 }

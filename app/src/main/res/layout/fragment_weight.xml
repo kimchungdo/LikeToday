@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/edit_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="날짜 선택"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/radio_group_time"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio_morning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아침" />
+
+            <RadioButton
+                android:id="@+id/radio_evening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="저녁" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/edit_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="몸무게 입력 (kg)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/button_save_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="저장"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</layout>

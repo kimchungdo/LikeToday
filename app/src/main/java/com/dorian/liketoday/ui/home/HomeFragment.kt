@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dorian.liketoday.databinding.FragmentHomeBinding
 import com.dorian.liketoday.viewmodel.TodoViewModel
 import androidx.fragment.app.viewModels
+import com.dorian.liketoday.R
 import com.dorian.liketoday.data.Todo
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -39,6 +40,8 @@ class HomeFragment : Fragment() {
 
         val addButton = binding!!.fabAddTodo
         val inputField = binding!!.editTodoInput
+        val weightButton = binding!!.buttonToWeightFragment
+        val chartButton = binding!!.buttonOpenChart
 
         addButton.setOnClickListener {
             val text = inputField.text.toString()
@@ -46,6 +49,20 @@ class HomeFragment : Fragment() {
                 viewModel.insert(Todo(title = text, date = today))
                 inputField.text.clear()
             }
+        }
+
+        weightButton.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.frag_container_nav, WeightFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        chartButton.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.frag_container_nav, WeightChartFragment())
+                .addToBackStack(null)
+                .commit()
         }
 
 

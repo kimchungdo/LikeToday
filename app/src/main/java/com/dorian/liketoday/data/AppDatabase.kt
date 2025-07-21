@@ -5,10 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Todo::class, Reward::class], version = 1)
+@Database(entities = [Todo::class, Reward::class, WeightEntry::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun todoDao(): TodoDao
     abstract fun rewardDao(): RewardDao
+    abstract fun weightDao(): WeightDao
 
     companion object {
         @Volatile
