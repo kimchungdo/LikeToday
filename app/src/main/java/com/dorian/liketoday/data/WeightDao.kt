@@ -12,6 +12,9 @@ interface WeightDao {
     @Query("SELECT * FROM weight_entry WHERE date = :date ORDER BY type")
     fun getEntriesByDate(date: String): LiveData<List<WeightEntry>>
 
+    @Query("SELECT * FROM weight_entry ORDER by date")
+    fun getAll(): LiveData<List<WeightEntry>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(query: WeightEntry)
 

@@ -41,6 +41,7 @@ class HomeFragment : Fragment() {
         val addButton = binding!!.fabAddTodo
         val inputField = binding!!.editTodoInput
         val weightButton = binding!!.buttonToWeightFragment
+        val chartButton = binding!!.buttonOpenChart
 
         addButton.setOnClickListener {
             val text = inputField.text.toString()
@@ -53,6 +54,13 @@ class HomeFragment : Fragment() {
         weightButton.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.frag_container_nav, WeightFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        chartButton.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.frag_container_nav, WeightChartFragment())
                 .addToBackStack(null)
                 .commit()
         }

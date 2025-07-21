@@ -15,6 +15,10 @@ class WeightViewModel(application: Application): AndroidViewModel(application) {
         return weightDao.getEntriesByDate(date)
     }
 
+    fun getAllEntries(): LiveData<List<WeightEntry>> {
+        return weightDao.getAll()
+    }
+
     fun insert(entry: WeightEntry) = viewModelScope.launch {
         weightDao.insert(entry)
     }
