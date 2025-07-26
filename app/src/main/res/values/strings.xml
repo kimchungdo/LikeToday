@@ -6,4 +6,7 @@
     <string name="logs">logs</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="weight_variation">Body Weight</string>
+    <string name="common_input">input</string>
+    <string name="please_input_weight">Please enter your weight! We\'ll compare your weight from last night to your weight from this morning.</string>
 </resources>

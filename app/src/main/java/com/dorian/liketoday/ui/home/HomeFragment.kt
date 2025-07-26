@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         today = LocalDate.now().format(DateTimeFormatter.ISO_DATE)
-        adapter = TodoAdapter {todo -> viewModel.update(todo.copy(isDone = !todo.isDone))}
+        adapter = TodoAdapter { todo -> viewModel.update(todo.copy(isDone = !todo.isDone)) }
 
         val recyclerView = binding!!.recyclerTodo
         recyclerView.adapter = adapter
@@ -40,8 +40,6 @@ class HomeFragment : Fragment() {
 
         val addButton = binding!!.fabAddTodo
         val inputField = binding!!.editTodoInput
-        val weightButton = binding!!.buttonToWeightFragment
-        val chartButton = binding!!.buttonOpenChart
 
         addButton.setOnClickListener {
             val text = inputField.text.toString()
@@ -51,20 +49,22 @@ class HomeFragment : Fragment() {
             }
         }
 
-        weightButton.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.frag_container_nav, WeightFragment())
-                .addToBackStack(null)
-                .commit()
-        }
+        binding!!.weightCard.apply {
+            onCardClicked = {
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.frag_container_nav, WeightChartFragment())
+                    .addToBackStack(null)
+                    .commit()
+            }
 
-        chartButton.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.frag_container_nav, WeightChartFragment())
-                .addToBackStack(null)
-                .commit()
-        }
+            onInputClicked = {
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.frag_container_nav, WeightFragment())
+                    .addToBackStack(null)
+                    .commit()
+            }
 
+        }
 
         return binding!!.root
     }
