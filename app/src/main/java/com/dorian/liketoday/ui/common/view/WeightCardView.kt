@@ -38,14 +38,14 @@ class WeightCardView @JvmOverloads constructor(
     init {
         orientation = VERTICAL
 
-        binding.buttonWeightInput.setOnClickListener {
+        binding.textWeightInput.setOnClickListener {
             onInputClicked?.invoke()
         }
 
         binding.cardLayout.setOnClickListener {
             onCardClicked?.invoke()
         }
-
+        binding.textWeightInsight.isSelected = true
         loadWeightData()
     }
 
@@ -97,6 +97,7 @@ class WeightCardView @JvmOverloads constructor(
                     diff > 0 -> "밤새 몸무게가 늘었어요. 식사나 수분 영향일 수 있어요."
                     else -> "변화가 없네요. 일정한 루틴을 유지 중이에요!"
                 }
+
             }
         }
     }

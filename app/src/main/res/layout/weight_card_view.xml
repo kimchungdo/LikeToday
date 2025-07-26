@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <!-- 바인딩 변수를 따로 쓰지 않음 -->
@@ -26,19 +27,27 @@
                 android:id="@+id/text_weight_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="체중 변화"
+                android:text="@string/weight_variation"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button_weight_input"
+            <TextView
+                android:id="@+id/text_weight_input"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/MyButtonStyle"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:text="입력" />
+                android:background="@drawable/bg_button_input"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="4dp"
+                android:text="@string/common_input"
+                android:textColor="@color/gray_6"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <!-- 몸무게 줄 -->
@@ -107,7 +116,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
-            android:text="인사이트 메시지 예시"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="@string/please_input_weight"
             android:textColor="#666666"
             android:textSize="14sp" />
     </LinearLayout>
