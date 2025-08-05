@@ -12,4 +12,5 @@
     <string name="common_add">add</string>
     <string name="please_input_weight">Please enter your weight! We\'ll compare your weight from last night to your weight from this morning.</string>
     <string name="eyebody_card_description">Let check and compare your shape by using your image. The data not saved at any server</string>
+    <string name="likeToday">LikeToday</string>
 </resources>

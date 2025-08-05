@@ -12,4 +12,5 @@
     <string name="common_add">추가</string>
     <string name="please_input_weight">몸무게를 입력해 주세요! 어제 밤의 몸무게와 오늘 아침의 몸무게를 비교할 거에요.</string>
     <string name="eyebody_card_description">사진을 입력해서 몸의 변화를 확인하고 비교해 보세요. 데이터는 서버에 업로드 되지 않으니 안심하세요.</string>
+    <string name="likeToday">오늘처럼</string>
 </resources>
