@@ -81,6 +81,7 @@ class WeightCardView @JvmOverloads constructor(
 
             if (morning != null && night != null) {
                 val diff = morning - night
+                val gram = abs(diff * 1000)
                 val sign = when {
                     diff < 0 -> "⬇️"
                     diff > 0 -> "⬆️"
@@ -88,14 +89,21 @@ class WeightCardView @JvmOverloads constructor(
                 }
 
                 val diffColor = if (diff < 0) "#388E3C" else if (diff > 0) "#D32F2F" else "#666666"
-                binding.textWeightDiff.text = "$sign %.0fg".format(abs(diff * 1000))
+                binding.textWeightDiff.text = "$sign %.0fg".format(gram)
                 binding.textWeightDiff.setTextColor(Color.parseColor(diffColor))
 
                 // 간단한 인사이트 예시
-                binding.textWeightInsight.text = when {
-                    diff < 0 -> "어제보다 가벼워졌어요! 수분이 빠졌을 수도 있어요."
-                    diff > 0 -> "밤새 몸무게가 늘었어요. 식사나 수분 영향일 수 있어요."
-                    else -> "변화가 없네요. 일정한 루틴을 유지 중이에요!"
+                binding.textWeightInsight.text = if (diff < 0) {
+                    "수면 이후에 몸무게가 증가했어요. 몸무게를 측정할 때는 공복 상태에서 측정하는 것을 추천드려요"
+                } else if (diff == 0f) {
+                    "어제와 오늘 사이에 몸무게의 차이가 없어요."
+                } else {
+                    when {
+                        gram < 500 -> "현재 살이 잘 찌는 체질이에요. 습관을 개선해 보는 것은 어떨까요?"
+                        gram < 700 -> "습관을 개선 중이에요. 살이 잘 빠지는 체질이 되기 위해 노력해 봐요. 수면 중 700g 이상 몸무게가 감소하면 살이 잘 빠지는 체질로 바뀌고 있다는 의미입니다"
+                        gram < 1000 -> "살이 잘 빠지는 체질로 바뀌고 있어요. 정말 대단해요! 수면 중 살이 안 찌는 체질은 1000g 이상 몸무게가 감소해요."
+                        else -> "살이 안 찌는 체질로 바뀌었어요. 현 상태를 최대한 유지해 봐요."
+                    }
                 }
 
             }
