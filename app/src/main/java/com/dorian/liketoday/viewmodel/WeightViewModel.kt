@@ -22,4 +22,8 @@ class WeightViewModel(application: Application): AndroidViewModel(application) {
     fun insert(entry: WeightEntry) = viewModelScope.launch {
         weightDao.insert(entry)
     }
+
+    fun deleteWeightEntry(id: Int) = viewModelScope.launch {
+        weightDao.deleteById(id)
+    }
 }

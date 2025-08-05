@@ -23,4 +23,7 @@ interface WeightDao {
 
     @Update
     suspend fun update(entry: WeightEntry)
+
+    @Query("DELETE FROM weight_entry WHERE id = :id")
+    suspend fun deleteById(id: Int)
 }
