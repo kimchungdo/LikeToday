@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- 바인딩 변수를 따로 쓰지 않음 -->
+    </data>
+
+    <LinearLayout
+        android:id="@+id/card_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        android:clickable="true"
+        android:descendantFocusability="blocksDescendants"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 타이틀 + 입력버튼 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_eye_body_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eye_body_title"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_eye_body_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_button_input"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="4dp"
+                android:text="@string/common_add"
+                android:textColor="@color/gray_6"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- 인사이트 -->
+        <TextView
+            android:id="@+id/text_eye_body_insight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:text="@string/eyebody_card_description"
+            android:textColor="#666666"
+            android:textSize="14sp" />
+    </LinearLayout>
+</layout>

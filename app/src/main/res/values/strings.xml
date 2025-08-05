@@ -7,6 +7,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="weight_variation">Body Weight</string>
+    <string name="eye_body_title">Mirror Check</string>
     <string name="common_input">input</string>
+    <string name="common_add">add</string>
     <string name="please_input_weight">Please enter your weight! We\'ll compare your weight from last night to your weight from this morning.</string>
+    <string name="eyebody_card_description">Let check and compare your shape by using your image. The data not saved at any server</string>
 </resources>

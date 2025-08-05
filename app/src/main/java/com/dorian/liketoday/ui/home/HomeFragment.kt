@@ -63,7 +63,10 @@ class HomeFragment : Fragment() {
                     .addToBackStack(null)
                     .commit()
             }
+        }
 
+        binding!!.eyeBodyCard.apply {
+            //TODO:add fragment
         }
 
         return binding!!.root
